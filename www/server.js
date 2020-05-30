@@ -15,9 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const util_1 = require("./util/util");
-var jwt = require('jsonwebtoken');
-const isImage = require('is-image');
-const request = require('request');
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const is_image_1 = __importDefault(require("is-image"));
+const request_1 = __importDefault(require("request"));
 (() => __awaiter(void 0, void 0, void 0, function* () {
     // Init the Express application
     const app = express_1.default();
@@ -47,7 +47,7 @@ const request = require('request');
     }));
     // App JWT token generator 
     app.get("/jwt", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const jwt_token = jwt.sign({
+        const jwt_token = jsonwebtoken_1.default.sign({
             data: 'foobar'
         }, 'secret', {
             expiresIn: 60 * 60
@@ -59,9 +59,9 @@ const request = require('request');
     // App JWT Token verifier 
     app.get("/verifyToken/:jwt", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         console.log(req.params.jwt);
-        var decoded = jwt.decode(req.params.jwt);
+        var decoded = jsonwebtoken_1.default.decode(req.params.jwt);
         // get the decoded payload and header
-        var decoded = jwt.decode(req.params.jwt, {
+        var decoded = jsonwebtoken_1.default.decode(req.params.jwt, {
             complete: true
         });
         res.send({
@@ -76,7 +76,7 @@ const request = require('request');
         var token = req.headers.authorization.split(' ')[1];
         if (!token)
             return res.status(401).send({ auth: false, message: 'No token provided.' });
-        yield jwt.verify(token, 'secret', function (err, decoded) {
+        yield jsonwebtoken_1.default.verify(token, 'secret', function (err, decoded) {
             if (err)
                 return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
         });
@@ -93,9 +93,9 @@ const request = require('request');
                 res.status(422).send({ message: "url response isnt valid or corrupted" });
             }
         }
-        request(options, callback);
+        request_1.default(options, callback);
         if (!err) {
-            var isImageflag = yield isImage(req.query.image_url);
+            var isImageflag = yield is_image_1.default(req.query.image_url.toString());
             if (isImageflag) {
                 var filteredImage = yield util_1.filterImageFromURL(req.query.image_url.toString());
                 res.status(200).sendFile(filteredImage);

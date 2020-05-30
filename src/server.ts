@@ -7,6 +7,8 @@ import {
 import jwt from 'jsonwebtoken';
 import isImage from 'is-image';
 import request from 'request';
+import { url } from 'inspector';
+import { createRequireFromPath } from 'module';
 
 
 (async () => {
@@ -101,9 +103,9 @@ function callback(error: any, response: { statusCode: number; }, body: any) {
 request(options, callback)
 
 if (!err){
-    var isImageflag =  await isImage(req.query.image_url)
+    var isImageflag =  await isImage(req.query.image_url.toString())
     if (isImageflag) {
-      var filteredImage = await filterImageFromURL(req.query.image_url.toString())
+      var filteredImage :string = await filterImageFromURL(req.query.image_url.toString())
       res.status(200).sendFile(filteredImage);
       console.log(filteredImage)
       res.on('finish', function(){
