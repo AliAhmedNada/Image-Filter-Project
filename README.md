@@ -28,7 +28,7 @@ http://{{HOST}}/verifyToken/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9
 
 ### ( beanstalk APP)
  you can directly use beanstalk app postman collect cloud-cdnd-c2-final.postman_collection-beanstalk-hostname
-[beanstalk URL] (imagefilter-env.eba-4zs53iir.us-east-1.elasticbeanstalk.com)
+[beanstalk URL](http://imagefilter-env.eba-4zs53iir.us-east-1.elasticbeanstalk.com)
 
 
 ### Create a new endpoint in the server.ts file
