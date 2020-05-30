@@ -20,12 +20,15 @@ You'll need to create a new node server. Open a new terminal within the project 
 1. Initialize a new project: `npm i`
 2. run the development server with `npm run dev`
 3. open postman collection  cloud-cdnd-c2-final.postman_collection.json
-4. create jwt token from jwt api .
+4. create jwt token from jwt api . (http://{{HOST}}/jwt)
 5. verify this token by adding it to the path ex :  
 http://{{HOST}}/verifyToken/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNTkwODM0NTUxLCJleHAiOjE1OTA4MzgxNTF9.nVtzqt_pQHHFxRLWsdpvQkfb75M3ESsiu7a-GRfgVn0
 
-6 . Add bearer token authentication to the filteredimage API and the image url to the query .
+6 . Add bearer token authentication to the filteredimage API and the image url to the query .  (http://{{HOST}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/4/4b/What_Is_URL.jpg)
 
+### ( beanstalk APP)
+ you can directly use beanstalk app postman collect cloud-cdnd-c2-final.postman_collection-beanstalk-hostname
+[beanstalk URL] (imagefilter-env.eba-4zs53iir.us-east-1.elasticbeanstalk.com)
 
 
 ### Create a new endpoint in the server.ts file
