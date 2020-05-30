@@ -3,16 +3,30 @@
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
 
 The project 
-[The Image Filtering Microservice](https://github.com/udacity/cloud-developer/tree/master/course-02/project/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images. [Your assignment]
+[The Image Filtering Microservice](https://github.com/udacity/cloud-developer/tree/master/course-02/project/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images. [My assignment]
 
-## Tasks
+I  associated 2 postman collections for this project to Try out the beanstalk and Local NodeJs 
 
-### Setup Node Environment
+1. cloud-cdnd-c2-final.postman_collection (local Host )
+2. cloud-cdnd-c2-final.postman_collection-beanstalk-hostname (beanstalk App)
+
+
+
+
+### Setup Node Environment (locally )
 
 You'll need to create a new node server. Open a new terminal within the project directory and run:
 
 1. Initialize a new project: `npm i`
 2. run the development server with `npm run dev`
+(added ) 3. open postman collection  cloud-cdnd-c2-final.postman_collection.json
+4. create jwt token from jwt api .
+5. verify this token by adding it to the path ex :  
+http://{{HOST}}/verifyToken/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNTkwODM0NTUxLCJleHAiOjE1OTA4MzgxNTF9.nVtzqt_pQHHFxRLWsdpvQkfb75M3ESsiu7a-GRfgVn0
+
+6 . Add bearer token authentication to the filteredimage API and the image url to the query .
+
+
 
 ### Create a new endpoint in the server.ts file
 
