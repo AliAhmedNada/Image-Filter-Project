@@ -4,9 +4,9 @@ import {
   filterImageFromURL,
   deleteLocalFiles
 } from './util/util';
-var jwt = require('jsonwebtoken');
-const isImage = require('is-image');
-const request = require('request');
+import jwt from 'jsonwebtoken';
+import isImage from 'is-image';
+import request from 'request';
 
 
 (async () => {
@@ -40,11 +40,11 @@ const request = require('request');
 
   // Root Endpoint
   // Displays a simple message to the user
-  app.get("/", async (req, res) => {
+  app.get("/", async (req:express.Request, res:express.Response) => {
     res.send("try GET /filteredimage?image_url={{}}")
   });
   // App JWT token generator 
-  app.get("/jwt", async (req, res) => {
+  app.get("/jwt", async (req:express.Request, res:express.Response) => {
     const jwt_token = jwt.sign({
       data: 'foobar'
     }, 'secret', {
@@ -56,7 +56,7 @@ const request = require('request');
   });
 
   // App JWT Token verifier 
-  app.get("/verifyToken/:jwt", async (req, res) => {
+  app.get("/verifyToken/:jwt", async (req:express.Request, res:express.Response) => {
 console.log(req.params.jwt)
     var decoded = jwt.decode(req.params.jwt);
 
@@ -74,7 +74,7 @@ console.log(req.params.jwt)
 
   // getting Image Url with Filter
   
-  app.get("/filteredimage",async (req, res) => {
+  app.get("/filteredimage",async (req:express.Request, res:express.Response) => {
 // Authentication validation 
 
     // Authentication validation\
