@@ -45,6 +45,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
 Follow the process described in the course to `eb init` a new application and `eb create` a new environment to deploy your image-filter service! Don't forget you can use `eb deploy` to push changes.
 
+### Deployment Images 
+you will find images for deployment in sample_project Images
+
 ### Authentication
 
 Prevent requests without valid authentication headers.
