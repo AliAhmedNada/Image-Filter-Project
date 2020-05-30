@@ -19,7 +19,7 @@ You'll need to create a new node server. Open a new terminal within the project 
 
 1. Initialize a new project: `npm i`
 2. run the development server with `npm run dev`
-(added ) 3. open postman collection  cloud-cdnd-c2-final.postman_collection.json
+3. open postman collection  cloud-cdnd-c2-final.postman_collection.json
 4. create jwt token from jwt api .
 5. verify this token by adding it to the path ex :  
 http://{{HOST}}/verifyToken/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNTkwODM0NTUxLCJleHAiOjE1OTA4MzgxNTF9.nVtzqt_pQHHFxRLWsdpvQkfb75M3ESsiu7a-GRfgVn0
