@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "2c419553-8894-4d47-8cf3-0f2dc885a9e9",
+		"name": "cloud-cdnd-c2-final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8082/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNTkwODM0NTUxLCJleHAiOjE1OTA4MzgxNTF9.nVtzqt_pQHHFxRLWsdpvQkfb75M3ESsiu7a-GRfgVn0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/4/4b/What_Is_URL.jpg",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/4/4b/What_Is_URL.jpg"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8082/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNTkwODMxMjU0LCJleHAiOjE1OTA4MzQ4NTR9.fVBFwuPLkIKZ3hWNrPBnBwMJXCptXiVAR7CxHCUiagY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}/filteredimage?image_url=https://media.wired.com/photos/5b8999943667562d3024c321/master/w_2560%2Cc_limit/trash2-01.jpg",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"filteredimage"
+							],
+							"query": [
+								{
+									"key": "image_url",
+									"value": "https://media.wired.com/photos/5b8999943667562d3024c321/master/w_2560%2Cc_limit/trash2-01.jpg"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 May 2020 09:45:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "verfiytoken",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/verifyToken/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNTkwNzU3NjkwLCJleHAiOjE1OTA3NjEyOTB9.Z9NFAYo55dTJ_Sazn8sY4lQmGNWGJZjHzOpffEzyjf",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"verifyToken",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNTkwNzU3NjkwLCJleHAiOjE1OTA3NjEyOTB9.Z9NFAYo55dTJ_Sazn8sY4lQmGNWGJZjHzOpffEzyjf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}/jwt",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"jwt"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "586a0d74-d00d-4dac-b02c-cb5fb3a488bd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4c39aa03-0e61-418a-9604-bbee0c8a59f0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "307ebd30-cc9b-4620-a3a3-30387f32219d",
+			"key": "HOST",
+			"value": "http://imagefilter-env.eba-4zs53iir.us-east-1.elasticbeanstalk.com/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
